@@ -18,12 +18,11 @@ public:
                 remain.push_back(entry.first);
                 entry.second--;
             }
-            
         }
         sort(remain.begin(),remain.end());
         for(int i:remain){
             ans.push_back(i);
         }
         return ans;
-     }
+    }
 };
