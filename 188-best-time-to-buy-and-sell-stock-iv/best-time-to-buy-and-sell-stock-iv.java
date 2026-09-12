@@ -1,7 +1,7 @@
 class Solution {
     public int maxProfit(int k, int[] prices) {
         int n=prices.length;
-        if(n==0 || k==0){
+        if(n==0||k==0){
             return 0;
         }
         if(k>=n/2){
@@ -32,4 +32,5 @@ class Solution {
         }
         return sell[k-1];
     }
+
 }
