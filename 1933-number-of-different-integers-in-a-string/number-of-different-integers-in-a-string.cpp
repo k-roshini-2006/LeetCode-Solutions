@@ -2,10 +2,9 @@ class Solution {
 public:
     int numDifferentIntegers(string word) {
         set<string> set;
-        int n=word.length();
         string sb;
-        for(int i=0;i<=n;i++){
-            if(i<n && isdigit(word[i])){
+        for(int i=0;i<=word.length();i++){
+            if(i<word.length() && isdigit(word[i])){
                 sb+=word[i];
             }
             else{
