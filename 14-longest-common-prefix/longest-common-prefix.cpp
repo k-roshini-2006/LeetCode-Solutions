@@ -9,4 +9,13 @@ public:
         }
         return prefix;
     }
+    string longestCommonSuffix(vector<string>& strs){
+        string suffix=strs[0];
+        for(int i=0;i<strs.size();i++){
+            while(suffix.length()>strs[i].length() || strs[i].compare(strs[i].length()-suffix.length(),suffix.length(),suffix)!=0){
+                suffix=suffix.substr(1);
+            }
+        }
+        return suffix;
+    }
 };
