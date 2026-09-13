@@ -3,8 +3,8 @@ class Solution {
         int evenSum = 0;
         int oddSum=0;
         for(int i=1;i<=n;i++){
-            evenSum+=(2*i);
-            oddSum+=(2*i-1);
+                evenSum+=2*i;
+                oddSum+=2*i-1;
         }
         return gcd(evenSum,oddSum);
     }
