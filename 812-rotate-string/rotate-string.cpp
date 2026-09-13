@@ -10,4 +10,17 @@ public:
         }
         return false;
     }
+    //left rotation and right rotation just for reference
+    string left(string s,int k){
+        int n=s.length();
+        k=k%n;
+        string ans=s.substr(k)+s.substr(0,k);
+        return ans;
+    }
+    string right(string s,int k){
+        int n=s.length();
+        k=k%n;
+        string ans=s.substr(n-k)+s.substr(0,n-k);
+        return ans;
+    }
 };
