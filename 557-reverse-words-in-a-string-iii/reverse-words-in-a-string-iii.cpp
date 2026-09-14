@@ -1,9 +1,9 @@
 class Solution {
 public:
     string reverseWords(string s) {
-        vector<string> parts;
         stringstream ss(s);
         string word;
+        vector<string> parts;
         while(ss>>word){
             parts.push_back(word);
         }
