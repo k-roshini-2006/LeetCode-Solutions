@@ -2,7 +2,7 @@ class Solution {
 public:
     string reverseVowels(string s) {
         int left=0;
-        int right=s.length();
+        int right=s.length()-1;
         while(left<right){
             while(left<right && !isVowel(s[left])){
                 left++;
