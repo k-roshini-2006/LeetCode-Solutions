@@ -7,7 +7,7 @@ public:
         while(ss>>words){
             parts.push_back(words);
         }
-        if(parts.size()!=pattern.length()){
+        if(pattern.length()!=parts.size()){
             return false;
         }
         unordered_map<char,string> mp;
@@ -27,7 +27,6 @@ public:
                 }
                 mp[ch]=word;
             }
-
         }
         return true;
     }
