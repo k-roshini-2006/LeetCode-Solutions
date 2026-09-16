@@ -4,7 +4,7 @@ class Solution {
         int[] prefix=new int[n];
         Arrays.fill(prefix,0);
         for(int i=0;i<n;i++){
-            if(isVowel(word[i].charAt(0)) && isVowel(word[i].charAt(word[i].length()-1))){
+            if(startsAndEndsWith(word[i])){
                 prefix[i]=1;
             }
             if(i>0){
@@ -27,6 +27,10 @@ class Solution {
             arr[i]=list.get(i);
         }
         return arr;
+    }
+    public boolean startsAndEndsWith(String s){
+        int n=s.length();
+        return isVowel(s.charAt(0)) && isVowel(s.charAt(n-1));
     }
     boolean isVowel(char ch){
         return ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U';
