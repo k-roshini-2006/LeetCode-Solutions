@@ -4,11 +4,18 @@ public:
         s.erase(remove_if(s.begin(),s.end(),[](char ch){
             return !isalnum(ch);
         }),s.end());
-        for(char& ch:s){
+        for(char &ch:s){
             ch=tolower(ch);
         }
-        string temp=s;
-        reverse(s.begin(),s.end());
-        return s==temp;
+        int left=0;
+        int right=s.length()-1;
+        while(left<right){
+            if(s[left]!=s[right]){
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
     }
 };
