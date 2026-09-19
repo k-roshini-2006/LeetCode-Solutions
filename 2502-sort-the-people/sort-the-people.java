@@ -1,6 +1,5 @@
 class Solution {
     public String[] sortPeople(String[] names, int[] heights) {
-        List<Integer> ht=new ArrayList<>();
         HashMap<Integer,String> mp=new HashMap<>();
         for(int i=0;i<names.length;i++){
             mp.put(heights[i],names[i]);
