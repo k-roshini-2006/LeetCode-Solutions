@@ -4,7 +4,7 @@ class Solution {
         int j=t.length()-1;
         int skipS=0;
         int skipT=0;
-        while(i>=0 ||j>=0){
+        while(i>=0 || j>=0){
             while(i>=0){
                 if(s.charAt(i)=='#'){
                     skipS++;
