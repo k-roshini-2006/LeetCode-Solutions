@@ -1,14 +1,17 @@
 class Solution {
     public boolean isPerfectSquare(int num) {
-        if(num==1){
-            return true;
-        }
-        else if(num==100000001){
-            return false;
-        }
-        for(int i=0;i<num;i++){
-            if(i*i == num){
+        long left = 1;
+        long right = num;
+        while (left <= right) {
+            long mid = left + (right - left) / 2;
+            long square = mid * mid;
+            if (square == num) {
                 return true;
+            }
+            if (square < num) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
             }
         }
         return false;
