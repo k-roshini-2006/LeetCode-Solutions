@@ -1,7 +1,7 @@
 class Solution {
     public int firstMissingPositive(int[] nums) {
         int n=nums.length;
-        boolean[] freq=new boolean[nums.length+1];
+        boolean[] freq=new boolean[n+1];
         for(int i:nums){
             if(i>0 && i<=n){
                 freq[i]=true;
