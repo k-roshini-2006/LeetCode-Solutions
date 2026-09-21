@@ -8,10 +8,11 @@ class Solution {
             mp1.put(ch,mp1.getOrDefault(ch,0)+1);
         }
         int left=0;
-        List<Integer> list=new ArrayList<>();
         HashMap<Character,Integer> mp2=new HashMap<>();
+        List<Integer> list=new ArrayList<>();
         for(int right=0;right<s.length();right++){
-            mp2.put(s.charAt(right),mp2.getOrDefault(s.charAt(right),0)+1);
+            char ch=s.charAt(right);
+            mp2.put(ch,mp2.getOrDefault(ch,0)+1);
             while(right-left+1>p.length()){
                 mp2.put(s.charAt(left),mp2.get(s.charAt(left))-1);
                 if(mp2.get(s.charAt(left))==0){
