@@ -1,31 +1,27 @@
 class Solution {
 public:
     vector<int> findAnagrams(string s, string p) {
-        vector<int> list;
         if(s.length()<p.length()){
-            return list;
+            return vector<int>{};
         }
-        map<int,int> mp1;
-        map<int,int> mp2;
+        map<char,int> mp1;
         for(char ch:p){
             mp1[ch]++;
-        } 
-        for(int i=0;i<p.length();i++){
-            mp2[s[i]]++;
         }
-        if(mp1==mp2){
-            list.push_back(0);
-        }
-        for(int i=p.length();i<s.length();i++){
-            char add=s[i];
-            mp2[add]++;
-            char remove=s[i-p.length()];
-            mp2[remove]=mp2[remove]-1;
-            if(mp2[remove]==0){
-                mp2.erase(remove);
+        int left=0;
+        map<char,int> mp2;
+        vector<int> list;
+        for(int right=0;right<s.length();right++){
+            mp2[s[right]]++;
+            while(right-left+1>p.length()){
+                mp2[s[left]]--;
+                if(mp2[s[left]]==0){
+                    mp2.erase(s[left]);
+                }
+                left++;
             }
             if(mp1==mp2){
-                list.push_back(i-p.length()+1);
+                list.push_back(left);
             }
         }
         return list;
