@@ -1,21 +1,19 @@
 class Solution {
     public boolean checkRecord(String s) {
-        HashMap<Character,Integer> mp=new HashMap<>();
-        for(char ch:s.toCharArray()){
-            mp.put(ch,mp.getOrDefault(ch,0)+1);
-        }
-        if(mp.containsKey('A') && mp.get('A')>=2){
-            return false;
-        }
-        int count=0;
-        for(int i=1;i<s.length()-1;i++){
-            if(s.charAt(i-1)=='L' && s.charAt(i)=='L' && s.charAt(i+1)=='L'){
-                count++;
+        int A=0;
+        int L=0;
+        for(int i=0;i<s.length();i++){
+
+            if(s.charAt(i) =='A'){
+                A++;
+            }
+            if((i>=1 && s.charAt(i-1)=='L') && s.charAt(i)=='L'&& (i<s.length()-1 && s.charAt(i+1)=='L')){
+                L++;
             }
         }
-        if(count>0){
-            return false;
+        if(A<2 && L==0){
+            return true;
         }
-        return true;
+        return false;
     }
 }
