@@ -1,5 +1,5 @@
 class RandomizedSet {
-    ArrayList<Integer> list;
+    List<Integer> list;
     HashMap<Integer,Integer> mp;
     public RandomizedSet() {
         list=new ArrayList<>();
@@ -7,12 +7,12 @@ class RandomizedSet {
     }
     
     public boolean insert(int val) {
-       if(mp.containsKey(val)){
-        return false;
-       } 
-       list.add(val);
-       mp.put(val,list.size()-1);
-       return true;
+        if(mp.containsKey(val)){
+            return false;
+        }
+        list.add(val);
+        mp.put(val,list.size()-1);
+        return true;
     }
     
     public boolean remove(int val) {
@@ -27,7 +27,6 @@ class RandomizedSet {
         mp.remove(val);
         return true;
     }
-
     
     public int getRandom() {
         int index=(int)(Math.random()*list.size());
