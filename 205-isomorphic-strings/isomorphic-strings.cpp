@@ -1,7 +1,10 @@
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {
-        unordered_map<char,char> mp;
+        if(s.length()!=t.length()){
+            return false;
+        }
+        map<char,char> mp;
         for(int i=0;i<s.length();i++){
             char ch1=s[i];
             char ch2=t[i];
