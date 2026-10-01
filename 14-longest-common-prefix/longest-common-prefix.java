@@ -8,4 +8,13 @@ class Solution {
         }
         return prefix;
     }
+    public String longestCommonSuffix(String[] strs){
+        String suffix=strs[0];
+        for(int i=0;i<strs.length;i++){
+            while(!strs[i].endsWith(suffix)){
+                suffix=suffix.substring(1);
+            }
+        }
+        return suffix;
+    }
 }
