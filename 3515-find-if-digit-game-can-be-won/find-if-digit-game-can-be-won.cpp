@@ -4,7 +4,7 @@ public:
         int single=0;
         int doub=0;
         for(int i:nums){
-            if(digitCount(i)==1){
+            if(i<10){
                 single+=i;
             }
             else{
@@ -17,13 +17,5 @@ public:
         else{
             return true;
         }
-    }
-    int digitCount(int n){
-        int count=0;
-        while(n>0){
-            n/=10;
-            count++;
-        }
-        return count;
     }
 };
