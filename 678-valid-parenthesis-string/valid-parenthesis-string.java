@@ -3,7 +3,7 @@ class Solution {
         Stack<Integer> open=new Stack<>();
         Stack<Integer> star=new Stack<>();
         for(int i=0;i<s.length();i++){
-           char  ch=s.charAt(i);
+            char ch=s.charAt(i);
             if(ch=='('){
                 open.push(i);
             }
