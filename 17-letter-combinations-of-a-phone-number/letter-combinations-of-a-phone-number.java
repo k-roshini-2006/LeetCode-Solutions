@@ -9,19 +9,19 @@ class Solution {
         mp.put('7',"pqrs");
         mp.put('8',"tuv");
         mp.put('9',"wxyz");
-        List<String> ans=new ArrayList<>();
-        backtrack(digits,0,"",mp,ans);
-        return ans;   
+        List<String> list=new ArrayList<>();
+        backtrack(0,digits,"",mp,list);
+        return list;
     }
-    public void backtrack(String digits,int index,String curr,HashMap<Character,String> mp,List<String> ans){
+    public void backtrack(int index,String digits,String curr,HashMap<Character,String> mp,List<String> list){
         if(index==digits.length()){
-            ans.add(curr);
+            list.add(curr);
             return;
         }
-        String letter=mp.get(digits.charAt(index));
-        for(int i=0;i<letter.length();i++){
-            char ch=letter.charAt(i);
-            backtrack(digits,index+1,curr+ch,mp,ans);
+        String letters=mp.get(digits.charAt(index));
+        for(int i=0;i<letters.length();i++){
+            char ch=letters.charAt(i);
+            backtrack(index+1,digits,curr+ch,mp,list);
         }
     }
 }
