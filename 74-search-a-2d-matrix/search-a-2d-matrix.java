@@ -5,7 +5,7 @@ class Solution {
         int left=0;
         int right=n1*n2-1;
         while(left<=right){
-            int mid=(right+left)/2;
+            int mid=(left+right)/2;
             int row=mid/n2;
             int col=mid%n2;
             if(matrix[row][col]==target){
