@@ -1,15 +1,15 @@
 class Solution {
 public:
     bool isPerfectSquare(int num) {
-        long left=1;
+        long left=0;
         long right=num;
         while(left<=right){
-            long mid=left+(right-left)/2;
-            long square=mid*mid;
-            if(square==num){
+            long mid=(left+right)/2;
+            long sqr=mid*mid;
+            if(sqr==num){
                 return true;
             }
-            if(square<num){
+            else if(sqr<num){
                 left=mid+1;
             }
             else{
