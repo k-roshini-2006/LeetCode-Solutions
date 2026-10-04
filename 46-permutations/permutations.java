@@ -5,9 +5,10 @@ class Solution {
         backtrack(nums,used,new ArrayList<>(),list);
         return list;
     }
-    void backtrack(int[] nums,boolean[] used,List<Integer> curr,List<List<Integer>> list){
+    public void backtrack(int[] nums,boolean[] used,List<Integer> curr,List<List<Integer>> list){
         if(curr.size()==nums.length){
             list.add(new ArrayList<>(curr));
+            return;
         }
         for(int i=0;i<nums.length;i++){
             if(used[i]){
@@ -19,6 +20,5 @@ class Solution {
             used[i]=false;
             curr.remove(curr.size()-1);
         }
-
     }
 }
