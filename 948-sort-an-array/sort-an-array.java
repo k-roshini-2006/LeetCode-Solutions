@@ -1,51 +1,35 @@
 class Solution {
     public int[] sortArray(int[] nums) {
         int n=nums.length;
-        mergeSort(nums,0,n-1);
+        heap(nums,n);
         return nums;
     }
-    public void mergeSort(int[] nums,int left,int right){
-        if(left<right){
-            int mid=(left+right)/2;
-            mergeSort(nums,left,mid);
-            mergeSort(nums,mid+1,right);
-            merge(nums,left,mid,right);
+    public void heapify(int[] nums,int n,int i){
+        int largest=i;
+        int left=2*i+1;
+        int right=2*i+2;
+        if(left<n && nums[left]>nums[largest]){
+            largest=left;
+        }
+        if(right<n && nums[right]>nums[largest]){
+            largest=right;
+        }
+        if(largest!=i){
+            int temp=nums[i];
+            nums[i]=nums[largest];
+            nums[largest]=temp;
+            heapify(nums,n,largest);
         }
     }
-    public void merge(int[] nums,int left,int mid,int right){
-        int n1=mid-left+1;
-        int n2=right-mid;
-        int[] leftArray=new int[n1];
-        int[] rightArray=new int[n2];
-        for(int i=0;i<n1;i++){
-            leftArray[i]=nums[left+i];
+    public void heap(int[] nums,int n){
+        for(int i=n/2-1;i>=0;i--){
+            heapify(nums,n,i);
         }
-        for(int i=0;i<n2;i++){
-            rightArray[i]=nums[mid+1+i];
-        }
-        int i=0;
-        int j=0;
-        int k=left;
-        while(i<n1 && j<n2){
-            if(i<n1 && leftArray[i]<=rightArray[j]){
-                nums[k]=leftArray[i];
-                i++;
-            }
-            else{
-                nums[k]=rightArray[j];
-                j++;
-            }
-            k++;
-        }
-        while(i<n1){
-            nums[k]=leftArray[i];
-            i++;
-            k++;
-        }
-        while(j<n2){
-            nums[k]=rightArray[j];
-            j++;
-            k++;
+        for(int i=n-1;i>=0;i--){
+            int temp=nums[0];
+            nums[0]=nums[i];
+            nums[i]=temp;
+            heapify(nums,i,0);
         }
     }
 }
