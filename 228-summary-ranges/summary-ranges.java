@@ -1,9 +1,10 @@
 class Solution {
     public List<String> summaryRanges(int[] nums) {
         List<String> list=new ArrayList<>();
-        for(int i=0;i<nums.length;i++){
+        int n=nums.length;
+        for(int i=0;i<n;i++){
             int start=nums[i];
-            while(i<nums.length-1 && nums[i]+1==nums[i+1]){
+            while(i<n-1 && nums[i]+1==nums[i+1]){
                 i++;
             }
             int end=nums[i];
