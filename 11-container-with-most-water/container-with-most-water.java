@@ -6,7 +6,7 @@ class Solution {
         while(left<right){
             int width=right-left;
             int h=Math.min(height[left],height[right]);
-            area=Math.max(area,h*width);
+            area=Math.max(area,width*h);
             if(height[left]<height[right]){
                 left++;
             }
