@@ -1,5 +1,5 @@
 class Solution {
-    public String intToRoman(int num) {
+    public String intToRoman(int nums) {
         LinkedHashMap<Integer,String> mp=new LinkedHashMap<>();
         mp.put(1000,"M");
         mp.put(900,"CM");
@@ -14,13 +14,13 @@ class Solution {
         mp.put(5,"V");
         mp.put(4,"IV");
         mp.put(1,"I");
-        StringBuilder result=new StringBuilder();
+        StringBuilder sb=new StringBuilder();
         for(int val:mp.keySet()){
-            while(num>=val){
-                result.append(mp.get(val));
-                num-=val;
+            while(nums>=val){
+                sb.append(mp.get(val));
+                nums-=val;
             }
         }
-        return result.toString();
+        return sb.toString();
     }
 }
