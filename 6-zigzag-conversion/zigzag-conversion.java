@@ -1,6 +1,6 @@
 class Solution {
     public String convert(String s, int numRows) {
-        if(numRows==1||numRows>=s.length()){
+        if(numRows==1 || s.length()<=numRows){
             return s;
         }
         List<String> list=new ArrayList<>();
@@ -8,7 +8,7 @@ class Solution {
             list.add("");
         }
         int row=0;
-        boolean down=false;
+        boolean down=true;
         for(int i=0;i<s.length();i++){
             list.set(row,list.get(row)+s.charAt(i));
             if(row==numRows-1){
