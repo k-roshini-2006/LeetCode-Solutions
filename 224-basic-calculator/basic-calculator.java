@@ -1,9 +1,9 @@
 class Solution {
     public int calculate(String s) {
-        int sign=1;
-        int result=0;
-        int num=0;
         Stack<Integer> st=new Stack<>();
+        int sign=1;
+        int num=0;
+        int result=0;
         for(char ch:s.toCharArray()){
             if(Character.isDigit(ch)){
                 num=num*10+(ch-'0');
