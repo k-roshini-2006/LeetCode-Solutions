@@ -1,12 +1,12 @@
 class Solution {
     public List<List<String>> solveNQueens(int n) {
+        List<List<String>> list=new ArrayList<>();
         char[][] board=new char[n][n];
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
                 board[i][j]='.';
             }
         }
-        List<List<String>> list=new ArrayList<>();
         backtrack(board,0,list);
         return list;
     }
@@ -25,8 +25,8 @@ class Solution {
             i--;
             j--;
         }
-         i=row-1;
-         j=col+1;
+        i=row-1;
+        j=col+1;
         while(i>=0 && j<board.length){
             if(board[i][j]=='Q'){
                 return false;
@@ -38,12 +38,12 @@ class Solution {
     }
     public void backtrack(char[][] board,int row,List<List<String>> list){
         if(row==board.length){
-            List<String> curr=new ArrayList<>();
-            for(int i=0;i<row;i++){
-                curr.add(new String(board[i]));
-            }
-            list.add(curr);
-            return;
+           List<String> curr=new ArrayList<>();
+           for(int i=0;i<row;i++){
+              curr.add(new String(board[i]));
+           }
+           list.add(new ArrayList<>(curr));
+           return;
         }
         for(int col=0;col<board.length;col++){
             if(isSafe(board,row,col)){
