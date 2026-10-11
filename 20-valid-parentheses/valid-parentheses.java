@@ -6,18 +6,7 @@ class Solution {
             if(ch=='('||ch=='['||ch=='{'){
                 st.push(ch);
             }
-            if(ch==']'){
-                if(st.isEmpty()){
-                    return false;
-                }
-                else if(st.peek()=='['){
-                    st.pop();
-                }
-                else{
-                    return false;
-                }
-            }
-            if(ch==')'){
+            else if(ch==')'){
                 if(st.isEmpty()){
                     return false;
                 }
@@ -28,7 +17,18 @@ class Solution {
                     return false;
                 }
             }
-            if(ch=='}'){
+            else if(ch==']'){
+                if(st.isEmpty()){
+                    return false;
+                }
+                else if(st.peek()=='['){
+                    st.pop();
+                }
+                else{
+                    return false;
+                }
+            }
+            else if(ch=='}'){
                 if(st.isEmpty()){
                     return false;
                 }
@@ -40,11 +40,6 @@ class Solution {
                 }
             }
         }
-        if(st.isEmpty()){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return st.isEmpty() ?  true : false;
     }
 }
