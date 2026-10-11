@@ -10,18 +10,18 @@ class Solution {
         mp.put('8',"tuv");
         mp.put('9',"wxyz");
         List<String> list=new ArrayList<>();
-        backtrack(0,digits,"",mp,list);
+        backtrack(digits,0,"",list,mp);
         return list;
     }
-    public void backtrack(int index,String digits,String curr,HashMap<Character,String> mp,List<String> list){
+    public void backtrack(String digits,int index,String curr,List<String> list,HashMap<Character,String> mp){
         if(index==digits.length()){
             list.add(curr);
             return;
         }
-        String letters=mp.get(digits.charAt(index));
-        for(int i=0;i<letters.length();i++){
-            char ch=letters.charAt(i);
-            backtrack(index+1,digits,curr+ch,mp,list);
+        String letter=mp.get(digits.charAt(index));
+        for(int i=0;i<letter.length();i++){
+            char ch=letter.charAt(i);
+            backtrack(digits,index+1,curr+ch,list,mp);
         }
     }
 }
