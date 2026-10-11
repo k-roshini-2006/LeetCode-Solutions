@@ -16,7 +16,7 @@ class Solution {
                 end=currEnd;
             }
         }
-        ans.add(new int[]{start,end});
+       ans.add(new int[]{start,end});
         return ans.toArray(new int[ans.size()][]);
     }
 }
