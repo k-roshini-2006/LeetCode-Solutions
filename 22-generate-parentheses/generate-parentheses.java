@@ -7,7 +7,7 @@ class Solution {
     public void backtrack(int n,int open,int close,String curr,List<String> list){
         if(curr.length()==2*n){
             list.add(curr);
-            return ;
+            return;
         }
         if(open<n){
             backtrack(n,open+1,close,curr+"(",list);
