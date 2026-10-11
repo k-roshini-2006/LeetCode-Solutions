@@ -6,7 +6,7 @@ class Solution {
         return list;
     }
     public void backtrack(int[] nums,boolean[] used,List<Integer> curr,List<List<Integer>> list){
-        if(curr.size()==nums.length){
+        if(nums.length==curr.size()){
             list.add(new ArrayList<>(curr));
             return;
         }
