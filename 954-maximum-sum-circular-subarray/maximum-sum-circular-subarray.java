@@ -5,12 +5,16 @@ class Solution {
         int total=0;
         for(int i=0;i<nums.length;i++){
             currMax+=nums[i];
-            maxSum=Math.max(maxSum,currMax);
+            if(currMax>maxSum){
+                maxSum=currMax;
+            }
             if(currMax<0){
                 currMax=0;
             }
             currMin+=nums[i];
-            minSum=Math.min(minSum,currMin);
+            if(currMin<minSum){
+                minSum=currMin;
+            }
             if(currMin>0){
                 currMin=0;
             }
