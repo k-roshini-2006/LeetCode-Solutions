@@ -9,6 +9,6 @@ class Solution {
             sb.append(digit);
             sum-=digit;
         }
-        return sb.toString();
+        return sum == 0 ? sb.toString(): "";
     }
 }
