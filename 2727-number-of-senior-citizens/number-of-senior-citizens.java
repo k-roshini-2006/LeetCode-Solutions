@@ -1,6 +1,5 @@
 class Solution {
     public int countSeniors(String[] details) {
-        String s="";
         int n=details.length;
         int[] ans=new int[n];
         for(int i=0;i<n;i++){
