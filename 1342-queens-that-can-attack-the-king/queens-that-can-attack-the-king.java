@@ -5,17 +5,17 @@ class Solution {
             set.add(q[0] + "," + q[1]);
         }
         int[][] direction={
-            {-1,-1},{-1,1},{1,1} ,{1,-1},
-            {1,0}  ,{0,1} ,{0,-1},{-1,0}
+            {-1,-1},{-1,1},{1,-1},{1,1},
+            {0,1}  ,{0,-1},{1,0} ,{-1,0}
         };
         List<List<Integer>> list=new ArrayList<>();
         for(int[] dir:direction){
-            int row=king[0]+dir[0];
-            int col=king[1]+dir[1];
+            int row=dir[0]+king[0];
+            int col=dir[1]+king[1];
             while(row>=0 && row<8 && col>=0 && col<8){
-                String position=row + "," + col;
-                if(set.contains(position)){
-                    list.add(Arrays.asList(row,col));
+                String pos=row + "," + col;
+                if(set.contains(pos)){
+                    list.add(new ArrayList<>(Arrays.asList(row,col)));
                     break;
                 }
                 row+=dir[0];
