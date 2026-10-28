@@ -1,11 +1,10 @@
 class Solution {
     public int findUnsortedSubarray(int[] nums) {
-        int n=nums.length;
-        int[] copy =nums.clone();
+        int[] copy=nums.clone();
+        Arrays.sort(copy);
         int first=-1;
         int last=-1;
-        Arrays.sort(copy);
-        for(int i=0;i<n;i++){
+        for(int i=0;i<nums.length;i++){
             if(nums[i]!=copy[i]){
                 if(first==-1){
                     first=i;
@@ -13,11 +12,6 @@ class Solution {
                 last=i;
             }
         }
-        if(first==-1){
-            return 0;
-        }
-        else{
-            return last-first+1;
-        }
+        return first==-1 ? 0 : last-first+1;
     }
 }
