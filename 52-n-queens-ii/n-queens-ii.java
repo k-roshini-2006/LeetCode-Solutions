@@ -6,8 +6,7 @@ class Solution {
                 board[i][j]='.';
             }
         }
-        int count=backtrack(board,0);
-        return count;
+        return backtrack(board,0);
     }
     public boolean isSafe(char[][] board,int row,int col){
         for(int i=0;i<row;i++){
@@ -34,10 +33,10 @@ class Solution {
             j++;
         }
         return true;
-    } 
+    }
     public int backtrack(char[][] board,int row){
         int count=0;
-        if(board.length==row){
+        if(row==board.length){
             return 1;
         }
         for(int col=0;col<board.length;col++){
