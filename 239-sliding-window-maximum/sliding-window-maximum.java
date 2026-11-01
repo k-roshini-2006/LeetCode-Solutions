@@ -5,7 +5,7 @@ class Solution {
         int[] result=new int[n-k+1];
         int i=0;
         for(int right=0;right<n;right++){
-            while(!dq.isEmpty() && dq.peekFirst() <=right-k){
+            while(!dq.isEmpty() && dq.peekFirst()<=right-k){
                 dq.removeFirst();
             }
             while(!dq.isEmpty() && nums[dq.peekLast()]<nums[right]){
