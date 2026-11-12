@@ -19,6 +19,5 @@ class Solution {
             dp[i]=Math.max(take,skip);
         }
         return dp[max];
-        
     }
 }
