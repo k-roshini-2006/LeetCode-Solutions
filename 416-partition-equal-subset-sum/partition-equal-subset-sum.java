@@ -10,9 +10,9 @@ class Solution {
         int target=sum/2;
         boolean[] dp=new boolean[target+1];
         dp[0]=true;
-        for(int i:nums){
-            for(int j=target;j>=i;j--){
-                dp[j]=dp[j]||dp[j-i];
+        for(int num:nums){
+            for(int i=target;i>=num;i--){
+                dp[i]=dp[i]||dp[i-num];
             }
         }
         return dp[target];
