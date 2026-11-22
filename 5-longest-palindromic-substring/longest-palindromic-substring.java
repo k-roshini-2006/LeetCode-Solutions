@@ -1,10 +1,10 @@
 class Solution {
     public String longestPalindrome(String s) {
-        int start=0;
-        int end=0;
-        if(s.length()==0 || s==null){
+        if(s.length()==1 || s==null){
             return s;
         }
+        int start=0;
+        int end=0;
         for(int i=0;i<s.length();i++){
             int odd=expand(s,i,i);
             int even=expand(s,i,i+1);
